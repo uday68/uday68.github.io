@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V Uday | Systems & Distributed Infrastructure Engineer</title>
+  <meta name="description" content="Portfolio of V Uday: Systems Engineer, Distributed Infrastructure, Kubernetes & Low-Level Computing." />
+  
+  <!-- Google Fonts: Google Sans / Roboto / Roboto Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto+Mono:wght@400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Google Sans"', 'Roboto', 'sans-serif'],
+            mono: ['"Roboto Mono"', 'monospace'],
+          },
+          colors: {
+            google: {
+              blue: '#1a73e8',
+              blueDark: '#8ab4f8',
+              red: '#ea4335',
+              yellow: '#fbbc04',
+              green: '#34a853',
+              surface: '#202124',
+              surfaceContainer: '#2d2f31',
+              surfaceCard: '#303134',
+              surfaceLight: '#f8f9fa',
+              containerLight: '#f1f3f4',
+            }
+          },
+          borderRadius: {
+            'm3-sm': '8px',
+            'm3-md': '12px',
+            'm3-lg': '16px',
+            'm3-xl': '24px',
+            'm3-full': '9999px',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Google Sans', Roboto, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .m3-elevation-1 {
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+    }
+    .m3-elevation-2 {
+      box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+    }
+    .m3-card-hover {
+      transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1);
+    }
+    .m3-card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0px 4px 12px 3px rgba(0, 0, 0, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-[#1f1f1f] text-[#e3e3e3] min-h-screen flex flex-col selection:bg-[#8ab4f8]/30 selection:text-white">
+
+  <!-- TOP APP BAR (Material 3 Style) -->
+  <header class="sticky top-0 z-40 bg-[#1f1f1f]/80 backdrop-blur-md border-b border-[#3c4043] px-4 lg:px-8 py-3">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full bg-[#8ab4f8]/20 flex items-center justify-center text-[#8ab4f8] font-bold text-lg">
+          VU
+        </div>
+        <div>
+          <span class="font-bold text-base tracking-tight text-white">V Uday</span>
+          <span class="hidden sm:inline-block text-xs text-[#9aa0a6] ml-2">/ MCA '27</span>
+        </div>
+      </div>
+
+      <nav class="flex items-center space-x-1 sm:space-x-2">
+        <a href="#projects" class="px-4 py-2 rounded-m3-full text-sm font-medium hover:bg-[#303134] text-[#c4c7c5] hover:text-white transition-colors">Projects</a>
+        <a href="#skills" class="px-4 py-2 rounded-m3-full text-sm font-medium hover:bg-[#303134] text-[#c4c7c5] hover:text-white transition-colors">Stack</a>
+        <a href="#principles" class="px-4 py-2 rounded-m3-full text-sm font-medium hover:bg-[#303134] text-[#c4c7c5] hover:text-white transition-colors">Principles</a>
+        <a href="https://github.com/uday68" target="_blank" class="p-2 rounded-full hover:bg-[#303134] text-[#8ab4f8] transition-colors" title="GitHub Profile">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (Google Material Surface Container) -->
+  <main class="flex-grow max-w-6xl mx-auto px-4 lg:px-8 py-10 space-y-12">
+    <section class="bg-[#282a2c] rounded-m3-xl p-6 sm:p-10 border border-[#3c4043] relative overflow-hidden">
+      <div class="relative z-10 max-w-3xl space-y-5">
+        <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-m3-full bg-[#34a853]/15 text-[#34a853] text-xs font-semibold tracking-wide">
+          <span class="w-2 h-2 rounded-full bg-[#34a853] animate-pulse"></span>
+          <span>AVAILABLE FOR 2026/2027 SYSTEMS & PLATFORM INTERNSHIPS</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+          Building resilient distributed systems, K8s operators & high-throughput engines.
+        </h1>
+
+        <p class="text-base sm:text-lg text-[#bdc1c6] leading-relaxed">
+          I'm an MCA graduate candidate (2027) focused on backend infrastructure, zero-downtime deployment orchestration, and hardware-accelerated algorithms (CUDA/C++). Every project features strict clean architecture, deterministic state machines, and passing CI/CD pipelines.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a href="#projects" class="px-6 py-3 rounded-m3-full bg-[#8ab4f8] text-[#202124] font-bold text-sm hover:bg-[#a6c8ff] transition-all flex items-center space-x-2">
+            <span>Explore Flagship Systems</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          <a href="https://linkedin.com/in/vuday" target="_blank" class="px-5 py-3 rounded-m3-full bg-[#303134] text-white font-medium text-sm hover:bg-[#3c4043] transition-colors border border-[#5f6368] flex items-center space-x-2">
+            <svg class="w-4 h-4 fill-current text-[#8ab4f8]" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn Profile</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE TECH STACK (Material Tonal Chips) -->
+    <section id="skills" class="space-y-4">
+      <div class="flex items-center space-x-2 text-xs font-semibold tracking-wider text-[#9aa0a6] uppercase">
+        <span class="w-2 h-2 rounded-full bg-[#8ab4f8]"></span>
+        <span>Verified Engineering Competencies</span>
+      </div>
+      <div class="flex flex-wrap gap-2 sm:gap-3">
+        <span class="px-4 py-2 rounded-m3-lg bg-[#303134] border border-[#3c4043] text-sm text-[#e3e3e3] font-mono">Go (Golang)</span>
+        <span class="px-4 py-2 rounded-m3-lg bg-[#303134] border border-[#3c4043] text-sm text-[#e3e3e3] font-mono">C++20 & CUDA</span>
+        <span class="px-4 py-2 rounded-m3-lg bg-[#303134] border border-[#3c4043] text-sm text-[#e3e3e3] font-mono">Kubernetes (Operators/CRDs)</span>
+        <span class="px-4 py-2 rounded-m3-lg bg-[#303134] border border-[#3c4043] text-sm text-[#e3e3e3] font-mono">ClickHouse & DuckDB</span>
+        <span class="px-4 py-2 rounded-m3-lg bg-[#303134] border border-[#3c4043] text-sm text-[#e3e3e3] font-mono">Redis & Temporal</span>
+        <span class="px-4 py-2 rounded-m3-lg bg-[#303134] border border-[#3c4043] text-sm text-[#e3e3e3] font-mono">Docker Compose & Nginx</span>
+        <span class="px-4 py-2 rounded-m3-lg bg-[#303134] border border-[#3c4043] text-sm text-[#e3e3e3] font-mono">Python & AST (sqlglot)</span>
+        <span class="px-4 py-2 rounded-m3-lg bg-[#303134] border border-[#3c4043] text-sm text-[#e3e3e3] font-mono">GitHub Actions CI/CD</span>
+      </div>
+    </section>
+
+    <!-- FLAGSHIP PROJECTS SECTION -->
+    <section id="projects" class="space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">Production Flagships</h2>
+          <p class="text-sm text-[#9aa0a6]">Ranked and verified through unit tests, CI automation, and explicit failure modes.</p>
+        </div>
+
+        <!-- M3 Filter Chips -->
+        <div class="flex flex-wrap gap-2" id="filter-container">
+          <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-1.5 rounded-m3-full text-xs font-semibold bg-[#8ab4f8] text-[#202124] transition-all">All (6)</button>
+          <button onclick="filterProjects('distributed')" class="filter-btn px-3.5 py-1.5 rounded-m3-full text-xs font-semibold bg-[#303134] text-[#c4c7c5] hover:bg-[#3c4043] transition-all">Distributed</button>
+          <button onclick="filterProjects('platform')" class="filter-btn px-3.5 py-1.5 rounded-m3-full text-xs font-semibold bg-[#303134] text-[#c4c7c5] hover:bg-[#3c4043] transition-all">Platform & K8s</button>
+          <button onclick="filterProjects('systems')" class="filter-btn px-3.5 py-1.5 rounded-m3-full text-xs font-semibold bg-[#303134] text-[#c4c7c5] hover:bg-[#3c4043] transition-all">Systems & GPU</button>
+        </div>
+      </div>
+
+      <!-- PROJECTS GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid">
+        
+        <!-- Project 1: payment-recovery-engine -->
+        <div class="project-card bg-[#282a2c] border border-[#3c4043] rounded-m3-xl p-6 m3-card-hover flex flex-col justify-between" data-category="distributed">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-m3-md bg-[#8ab4f8]/15 text-[#8ab4f8] text-xs font-semibold font-mono">S-Tier Flagship</span>
+              <span class="inline-flex items-center text-xs text-[#34a853] font-medium">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#34a853] mr-1.5"></span>104 Tests Passed
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-white hover:text-[#8ab4f8] transition-colors">
+              <a href="https://github.com/uday68/payment-recovery-engine" target="_blank">payment-recovery-engine</a>
+            </h3>
+            <p class="text-sm text-[#bdc1c6] leading-relaxed">
+              Distributed recovery runtime handling webhook timeouts, double-charging races, and asynchronous reconciliation with Redis distributed locks and Temporal orchestrations.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-[#9aa0a6]">
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Go</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Redis</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Temporal</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Prometheus</span>
+            </div>
+          </div>
+          <div class="pt-6 mt-4 border-t border-[#3c4043] flex items-center justify-between text-xs">
+            <span class="text-[#9aa0a6]">59 Commits • Passing CI</span>
+            <a href="https://github.com/uday68/payment-recovery-engine" target="_blank" class="text-[#8ab4f8] font-semibold hover:underline flex items-center space-x-1">
+              <span>View Source</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: flarehouse -->
+        <div class="project-card bg-[#282a2c] border border-[#3c4043] rounded-m3-xl p-6 m3-card-hover flex flex-col justify-between" data-category="platform">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-m3-md bg-[#8ab4f8]/15 text-[#8ab4f8] text-xs font-semibold font-mono">S-Tier Flagship</span>
+              <span class="inline-flex items-center text-xs text-[#34a853] font-medium">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#34a853] mr-1.5"></span>K8s CRD Engine
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-white hover:text-[#8ab4f8] transition-colors">
+              <a href="https://github.com/uday68/flarehouse" target="_blank">flarehouse</a>
+            </h3>
+            <p class="text-sm text-[#bdc1c6] leading-relaxed">
+              Multi-tenant telemetry analytics platform pairing Go gateways with ClickHouse column stores, Kubernetes PlatformCell orchestrations, and React 19 real-time telemetry.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-[#9aa0a6]">
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Go</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">ClickHouse</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">React 19</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Kubernetes</span>
+            </div>
+          </div>
+          <div class="pt-6 mt-4 border-t border-[#3c4043] flex items-center justify-between text-xs">
+            <span class="text-[#9aa0a6]">PlatformCell Architecture</span>
+            <a href="https://github.com/uday68/flarehouse" target="_blank" class="text-[#8ab4f8] font-semibold hover:underline flex items-center space-x-1">
+              <span>View Source</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: ReleaseRail -->
+        <div class="project-card bg-[#282a2c] border border-[#3c4043] rounded-m3-xl p-6 m3-card-hover flex flex-col justify-between" data-category="platform">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-m3-md bg-[#8ab4f8]/15 text-[#8ab4f8] text-xs font-semibold font-mono">S-Tier Flagship</span>
+              <span class="inline-flex items-center text-xs text-[#34a853] font-medium">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#34a853] mr-1.5"></span>Zero-Downtime Verified
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-white hover:text-[#8ab4f8] transition-colors">
+              <a href="https://github.com/uday68/ReleaseRail" target="_blank">ReleaseRail</a>
+            </h3>
+            <p class="text-sm text-[#bdc1c6] leading-relaxed">
+              Production blue/green deployment orchestration daemon in Go. Automates container cutovers with health-check barriers and atomic Nginx configuration reloads.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-[#9aa0a6]">
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Go</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Docker Compose</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Nginx</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Unix Sockets</span>
+            </div>
+          </div>
+          <div class="pt-6 mt-4 border-t border-[#3c4043] flex items-center justify-between text-xs">
+            <span class="text-[#9aa0a6]">Atomic Unix Signals</span>
+            <a href="https://github.com/uday68/ReleaseRail" target="_blank" class="text-[#8ab4f8] font-semibold hover:underline flex items-center space-x-1">
+              <span>View Source</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: cuda-flash-attention-engine -->
+        <div class="project-card bg-[#282a2c] border border-[#3c4043] rounded-m3-xl p-6 m3-card-hover flex flex-col justify-between" data-category="systems">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-m3-md bg-[#fbbc04]/15 text-[#fbbc04] text-xs font-semibold font-mono">A-Tier High Ceil</span>
+              <span class="inline-flex items-center text-xs text-[#8ab4f8] font-medium">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#8ab4f8] mr-1.5"></span>CUDA 12.2 CI
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-white hover:text-[#8ab4f8] transition-colors">
+              <a href="https://github.com/uday68/cuda-flash-attention-engine" target="_blank">cuda-flash-attention-engine</a>
+            </h3>
+            <p class="text-sm text-[#bdc1c6] leading-relaxed">
+              Hardware-accelerated FlashAttention implementation from scratch. Uses SRAM shared-memory tiling and online numerical softmax to reduce memory complexity from $O(N^2)$ to $O(N)$.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-[#9aa0a6]">
+              <span class="px-2 py-0.5 rounded bg-[#303134]">C++20</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">CUDA 12.2</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">SRAM Tiling</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">PyTorch ATen</span>
+            </div>
+          </div>
+          <div class="pt-6 mt-4 border-t border-[#3c4043] flex items-center justify-between text-xs">
+            <span class="text-[#9aa0a6]">NVCC Automated CI</span>
+            <a href="https://github.com/uday68/cuda-flash-attention-engine" target="_blank" class="text-[#8ab4f8] font-semibold hover:underline flex items-center space-x-1">
+              <span>View Source</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5: gdc-vm-operator -->
+        <div class="project-card bg-[#282a2c] border border-[#3c4043] rounded-m3-xl p-6 m3-card-hover flex flex-col justify-between" data-category="platform">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-m3-md bg-[#8ab4f8]/15 text-[#8ab4f8] text-xs font-semibold font-mono">A-Tier Specialist</span>
+              <span class="inline-flex items-center text-xs text-[#34a853] font-medium">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#34a853] mr-1.5"></span>11 Tests Passed
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-white hover:text-[#8ab4f8] transition-colors">
+              <a href="https://github.com/uday68/gdc-vm-operator" target="_blank">gdc-vm-operator</a>
+            </h3>
+            <p class="text-sm text-[#bdc1c6] leading-relaxed">
+              Declarative Kubernetes Operator reconciling air-gapped VirtualMachine CRDs with idempotent reconciliation loops, health-check conditions, and finalizers.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-[#9aa0a6]">
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Go</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Kubebuilder</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Controller-Runtime</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">K8s CRDs</span>
+            </div>
+          </div>
+          <div class="pt-6 mt-4 border-t border-[#3c4043] flex items-center justify-between text-xs">
+            <span class="text-[#9aa0a6]">Air-Gapped Cloud Edge</span>
+            <a href="https://github.com/uday68/gdc-vm-operator" target="_blank" class="text-[#8ab4f8] font-semibold hover:underline flex items-center space-x-1">
+              <span>View Source</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6: cortex-edw -->
+        <div class="project-card bg-[#282a2c] border border-[#3c4043] rounded-m3-xl p-6 m3-card-hover flex flex-col justify-between" data-category="distributed">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-m3-md bg-[#8ab4f8]/15 text-[#8ab4f8] text-xs font-semibold font-mono">A-Tier Specialist</span>
+              <span class="inline-flex items-center text-xs text-[#34a853] font-medium">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#34a853] mr-1.5"></span>17 Tests Passed
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-white hover:text-[#8ab4f8] transition-colors">
+              <a href="https://github.com/uday68/cortex-edw" target="_blank">cortex-edw</a>
+            </h3>
+            <p class="text-sm text-[#bdc1c6] leading-relaxed">
+              Multi-Agent Data Platform & Governed Analytics Engine with compile-time AST verification via `sqlglot` to prevent unauthorized table traversal and multi-statement SQL attacks.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-[#9aa0a6]">
+              <span class="px-2 py-0.5 rounded bg-[#303134]">Python 3.12</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">DuckDB</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">sqlglot (AST)</span>
+              <span class="px-2 py-0.5 rounded bg-[#303134]">FastMCP</span>
+            </div>
+          </div>
+          <div class="pt-6 mt-4 border-t border-[#3c4043] flex items-center justify-between text-xs">
+            <span class="text-[#9aa0a6]">Automated Multi-Python CI</span>
+            <a href="https://github.com/uday68/cortex-edw" target="_blank" class="text-[#8ab4f8] font-semibold hover:underline flex items-center space-x-1">
+              <span>View Source</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CLEAN CODE & ENGINEERING PRINCIPLES -->
+    <section id="principles" class="bg-[#282a2c] rounded-m3-xl p-6 sm:p-8 border border-[#3c4043] space-y-4">
+      <h2 class="text-xl font-bold text-white tracking-tight">Engineering & Clean Code Philosophy</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 text-sm text-[#bdc1c6]">
+        <div class="space-y-2">
+          <h4 class="font-bold text-white flex items-center space-x-2">
+            <span class="text-[#8ab4f8]">01.</span>
+            <span>Deterministic State Machines</span>
+          </h4>
+          <p class="text-xs leading-relaxed text-[#9aa0a6]">
+            Every distributed transition (payment retries, container cutovers, operator reconciliations) is modeled as a state machine with explicit guards preventing race conditions and invalid transitions.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <h4 class="font-bold text-white flex items-center space-x-2">
+            <span class="text-[#8ab4f8]">02.</span>
+            <span>Zero Unverified Claims</span>
+          </h4>
+          <p class="text-xs leading-relaxed text-[#9aa0a6]">
+            No benchmark or reliability claim exists without an automated test or benchmark script. 100% of portfolio repositories feature green CI/CD pipelines verified on every commit.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <h4 class="font-bold text-white flex items-center space-x-2">
+            <span class="text-[#8ab4f8]">03.</span>
+            <span>Separation of Concerns</span>
+          </h4>
+          <p class="text-xs leading-relaxed text-[#9aa0a6]">
+            Domain logic is strictly decoupled from network drivers, database calls, and protocol wrappers via clean Go interfaces and Python dependency injection.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#1f1f1f] border-t border-[#3c4043] px-4 py-8 text-center text-xs text-[#9aa0a6]">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 V Uday • Built with Google Material Design 3 • Deployed on GitHub Pages</p>
+      <div class="flex items-center space-x-4">
+        <a href="https://github.com/uday68" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+        <a href="https://linkedin.com/in/vuday" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="mailto:vuday8370@gmail.com" class="hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-[#8ab4f8]', 'text-[#202124]', 'active');
+        btn.classList.add('bg-[#303134]', 'text-[#c4c7c5]');
+      });
+
+      event.target.classList.remove('bg-[#303134]', 'text-[#c4c7c5]');
+      event.target.classList.add('bg-[#8ab4f8]', 'text-[#202124]', 'active');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
