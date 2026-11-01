@@ -17,8 +17,9 @@ Built with **Google Material Design 3 (Material You)** aesthetics, responsive ty
   2. `flarehouse` (Go, ClickHouse, React 19, K8s CRD) — Platform Cell Architecture
   3. `ReleaseRail` (Go, Docker, Nginx) — Zero-Downtime Blue/Green Release Daemon
   4. `cuda-flash-attention-engine` (C++20, CUDA 12.2) — Custom SRAM Tiling & Softmax
-  5. `gdc-vm-operator` (Go, Kubebuilder) — Declarative Air-Gapped K8s Operator
-  6. `cortex-edw` (Python, DuckDB, AST `sqlglot`) — Governed Analytics Platform
+  5. `nvaie-supportability-toolkit` (Python, K8s, Triton) — NVAIE Preflight & Diagnostic Triage
+  6. `gdc-vm-operator` (Go, Kubebuilder) — Declarative Air-Gapped K8s Operator
+  7. `cortex-edw` (Python, DuckDB, AST `sqlglot`) — Governed Analytics Platform
 
 ## 📄 License
 MIT © 2026 V Uday

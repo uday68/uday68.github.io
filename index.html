@@ -374,7 +374,7 @@
 
         <!-- M3 Filter Pills -->
         <div class="flex flex-wrap gap-1.5 p-1 bg-[#1a1d24] rounded-m3-full border border-white/10 text-xs font-medium" id="filter-container">
-          <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-1.5 rounded-m3-full bg-[#8ab4f8] text-[#0f1115] transition-all">All (6)</button>
+          <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-1.5 rounded-m3-full bg-[#8ab4f8] text-[#0f1115] transition-all">All (7)</button>
           <button onclick="filterProjects('distributed')" class="filter-btn px-3.5 py-1.5 rounded-m3-full text-[#c4c7c5] hover:text-white transition-all">Distributed</button>
           <button onclick="filterProjects('platform')" class="filter-btn px-3.5 py-1.5 rounded-m3-full text-[#c4c7c5] hover:text-white transition-all">Cloud & K8s</button>
           <button onclick="filterProjects('systems')" class="filter-btn px-3.5 py-1.5 rounded-m3-full text-[#c4c7c5] hover:text-white transition-all">Low-Level & GPU</button>
@@ -578,7 +578,57 @@
           </div>
         </div>
 
-        <!-- Project 5: gdc-vm-operator -->
+                <!-- Project 5: nvaie-supportability-toolkit -->
+        <div class="project-card glass-card rounded-m3-xl p-6 flex flex-col justify-between" data-category="systems">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-m3-md bg-[#76b900]/15 text-[#76b900] text-xs font-bold font-mono border border-[#76b900]/20">NVIDIA Ecosystem</span>
+              <span class="inline-flex items-center text-xs text-[#34a853] font-semibold bg-[#34a853]/10 px-2 py-0.5 rounded-full border border-[#34a853]/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#34a853] mr-1.5"></span>11 Tests Passing
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white">
+                <a href="https://github.com/uday68/nvaie-supportability-toolkit" target="_blank" class="hover:text-[#8ab4f8] flex items-center space-x-1.5">
+                  <span>nvaie-supportability-toolkit</span>
+                  <svg class="w-4 h-4 opacity-60 hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+              </h3>
+              <p class="text-sm text-[#9aa0a6] leading-relaxed mt-2">
+                Production-grade diagnostic automation, preflight validation, Xid error triage, and reproducible test harnesses for NVIDIA AI Enterprise (NVAIE) on Kubernetes & Hybrid Cloud.
+              </p>
+            </div>
+
+            <div class="p-3 rounded-m3-md bg-[#13161c] border border-white/5 space-y-1 text-xs">
+              <div class="text-[#8ab4f8] font-mono text-[11px] font-medium">Key Engineering Mechanics:</div>
+              <ul class="text-[#bdc1c6] text-[11px] list-disc list-inside space-y-0.5">
+                <li>Preflight validation for cgroups v2, IOMMU, and certified NVAIE driver branches</li>
+                <li>Kernel ring buffer parser triaging NVIDIA Xid errors (Xid 31, 43, 79, 92)</li>
+                <li>Zero-trust data sanitizer and sanitized diagnostic tarball generator</li>
+                <li>Triton Inference Server load reproducer and dynamic batching fault injector</li>
+              </ul>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded bg-[#222630] text-[#c4c7c5]">Python 3.12</span>
+              <span class="px-2.5 py-1 rounded bg-[#222630] text-[#c4c7c5]">NVIDIA NVAIE</span>
+              <span class="px-2.5 py-1 rounded bg-[#222630] text-[#c4c7c5]">Kubernetes</span>
+              <span class="px-2.5 py-1 rounded bg-[#222630] text-[#c4c7c5]">Triton Server</span>
+              <span class="px-2.5 py-1 rounded bg-[#222630] text-[#c4c7c5]">Xid Triage</span>
+            </div>
+          </div>
+
+          <div class="pt-5 mt-5 border-t border-white/10 flex items-center justify-between text-xs">
+            <span class="text-[#9aa0a6] font-mono">11 Tests • 100% Verified</span>
+            <a href="https://github.com/uday68/nvaie-supportability-toolkit" target="_blank" class="text-[#8ab4f8] font-semibold hover:underline flex items-center space-x-1">
+              <span>View Source Code</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6: gdc-vm-operator -->
         <div class="project-card glass-card rounded-m3-xl p-6 flex flex-col justify-between" data-category="platform">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
@@ -626,7 +676,7 @@
           </div>
         </div>
 
-        <!-- Project 6: cortex-edw -->
+        <!-- Project 7: cortex-edw -->
         <div class="project-card glass-card rounded-m3-xl p-6 flex flex-col justify-between" data-category="distributed">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
@@ -891,7 +941,7 @@
       if (cmd === 'about') {
         out.innerHTML = '<span class="text-[#8ab4f8]">$ cat about.txt</span><br/>V Uday | Software Engineer & Systems Architect<br/>Focus: Deterministic state machines, K8s operators, CUDA kernels.';
       } else if (cmd === 'projects') {
-        out.innerHTML = '<span class="text-[#8ab4f8]">$ ls -la projects/</span><br/>drwxr-xr-x payment-recovery-engine (104 tests)<br/>drwxr-xr-x ReleaseRail (Nginx zero-downtime)<br/>drwxr-xr-x cuda-flash-attention-engine (CUDA 12.2)<br/>drwxr-xr-x cortex-edw (DuckDB + AST guard)';
+        out.innerHTML = '<span class="text-[#8ab4f8]">$ ls -la projects/</span><br/>drwxr-xr-x payment-recovery-engine (104 tests)<br/>drwxr-xr-x ReleaseRail (Nginx zero-downtime)<br/>drwxr-xr-x cuda-flash-attention-engine (CUDA 12.2)<br/>drwxr-xr-x nvaie-supportability-toolkit (NVIDIA NVAIE & Triton)<br/>drwxr-xr-x cortex-edw (DuckDB + AST guard)';
       } else if (cmd === 'test') {
         out.innerHTML = '<span class="text-[#8ab4f8]">$ go test -v ./...</span><br/>=== RUN TestIdempotentRecovery<br/>--- PASS: TestIdempotentRecovery (0.04s)<br/>PASS: 104/104 tests ok. Coverage: 94.2%';
       }
