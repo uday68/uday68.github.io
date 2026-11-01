@@ -2,8 +2,11 @@
 
 Built with **Google Material Design 3 (Material You)** aesthetics, responsive typography, and direct links to audited, production-grade systems projects.
 
-## 🚀 Live Site
-Published on GitHub Pages: [https://uday68.github.io](https://uday68.github.io)
+## 🚀 Live Site & Contact
+- **Portfolio:** [https://uday68.github.io](https://uday68.github.io)
+- **LinkedIn:** [https://www.linkedin.com/in/v-uday-37515b253/](https://www.linkedin.com/in/v-uday-37515b253/)
+- **GitHub:** [https://github.com/uday68](https://github.com/uday68)
+- **Email:** [vuday8370@gmail.com](mailto:vuday8370@gmail.com)
 
 ## 🛠️ Tech Stack
 - **Design System:** Google Material Design 3 (Material You tokens & elevation)
